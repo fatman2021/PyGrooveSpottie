@@ -24,6 +24,7 @@ class GrooveSpottie(object):
         return requests.get('http://tinysong.com/a/' + track_str, params=payload).json()
 
     def get_track_queries(self, page_pq):
+        print 'Building track queries...'
         tds = page_pq('tbody tr td')
         track_queries = []
         i = 1
@@ -45,10 +46,13 @@ class GrooveSpottie(object):
         return track_queries
                     
     def get_tracks_info(self, future_selector_param=None):
-        page_pq = pq('http://cd1025.com/about/playlists/now-playing')
+        source = 'http://cd1025.com/about/playlists/now-playing'
+        print 'Grabbing page source from "%s"' % source
+        page_pq = pq(source)
         track_queries = self.get_track_queries(page_pq)
         tracks_info = []
         for i, query in enumerate(track_queries):
+            print 'Attempting to create entry for %s' % query
             next_entry = {}
             next_entry['track_query'] = query
             try:
@@ -64,14 +68,17 @@ class GrooveSpottie(object):
         return tracks_info
             
     def main(self):
-        w = webdriver.Firefox()
         tracks = self.get_tracks_info()
+        print 'Track information gathered, launching browser...'
+        w = webdriver.Firefox()
         for track in reversed(tracks):
+            print 'Starting up "%s"' % track['track_query']
             w.get(track['tinysong_url'])
             try:
                 w.switch_to_alert().accept()
             except WebDriverException:
                 pass
+            print 'next song starts in approx: %ss' % track['track_length']
             time.sleep(track['track_length'])
         w.close()
 
