@@ -2,7 +2,7 @@ import requests
 import time
 from pyquery import PyQuery as pq
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException
+from selenium.common.exceptions import WebDriverException, NoSuchElementException
 from xml.etree import ElementTree
 
 from creds import TINYSONG_KEY
@@ -44,7 +44,7 @@ class GrooveSpottie(object):
                 next_entry += '+' + clean(tds[i].text)
                 track_queries.append(next_entry)
                 i += 3
-        return track_queries
+        return track_queries#[-3:-1] #<-- for testing purposes
                     
     def get_tracks_info(self, future_selector_param=None):
         source = 'http://cd1025.com/about/playlists/now-playing'
@@ -56,16 +56,15 @@ class GrooveSpottie(object):
             print 'Attempting to create entry for %s' % query
             next_entry = {}
             next_entry['track_query'] = query
-            #try:
-                #next_entry['track_length'] = self.get_song_length(query)
-            tinysong_url = self.get_tinysong_url(query)
-            if tinysong_url:
-                next_entry['tinysong_url'] = tinysong_url
-                tracks_info.append(next_entry)
-            else:
+            try:
+                tinysong_url = self.get_tinysong_url(query)
+                if tinysong_url:
+                    next_entry['tinysong_url'] = tinysong_url
+                    tracks_info.append(next_entry)
+                else:
+                    track_queries.pop(i)
+            except ValueError:
                 track_queries.pop(i)
-            #except AttributeError:
-                #track_queries.pop(i)
         return tracks_info
             
     def main(self):
@@ -79,11 +78,44 @@ class GrooveSpottie(object):
                 w.switch_to_alert().accept()
             except WebDriverException:
                 pass
-            time.sleep(2)
-            track_length_raw = [float(x) for x in w.find_element_by_id('time-total').text.split(':')]
-            track['track_length'] = track_length_raw[0]*60 + track_length_raw[1] - 2
+
+            delay = 0
+            play_pause = None
+            #Wait up to 30 seconds for the page to load
+            while not play_pause and delay < 30:
+                try:
+                    play_pause = w.find_element_by_id('play-pause')
+                except NoSuchElementException:
+                    delay += 3
+                    time.sleep(3)
+
+            #Check there was no timeout
+            if delay >= 30:
+                print 'There seems to be an issue with Grooveshark loading'
+                break
+
+            if 'paused' in play_pause.get_attribute('class'):
+                #Page did not start playing immediately
+                play_pause.click()
+
+            delay = 0
+            track_length_raw = None
+            while not track_length_raw and delay < 10:
+                try:
+                    track_length_raw = [float(x) for x in w.find_element_by_id('time-total').text.split(':')]
+                except ValueError:
+                    delay +=1
+                    time.sleep(1)
+
+            #Check there was no timeout
+            if delay >= 10:
+                print 'There seems to be an issue with Grooveshark loading'
+                break
+
+            track['track_length'] = track_length_raw[0]*60 + track_length_raw[1]
             print 'next song starts in approx: %ss' % track['track_length']
-            time.sleep(track['track_length'])
+            #Sleep (minus 1 to account for delay, above)
+            time.sleep(track['track_length']-1))
         w.close()
 
 if __name__ == '__main__':
