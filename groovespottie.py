@@ -1,5 +1,8 @@
 import requests
 import time
+import yaml
+
+from os import path
 from pyquery import PyQuery as pq
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException, NoSuchElementException
@@ -8,6 +11,10 @@ from xml.etree import ElementTree
 from creds import TINYSONG_KEY
 
 class GrooveSpottie(object):
+    def __init__(self):
+        self.past_run_data_path = path.dirname(path.abspath(__file__))
+        self.past_run_data = yaml.load(open(path.join(self.past_run_data_path, 'past_run_data.yaml')))
+
     def get_song_length(self, track_str):
         #Expects song_name to be in form of
         # 'artist+name+song+name'
@@ -45,7 +52,7 @@ class GrooveSpottie(object):
                 track_queries.append(next_entry)
                 i += 3
         return track_queries#[-3:-1] #<-- for testing purposes
-                    
+
     def get_tracks_info(self, future_selector_param=None):
         source = 'http://cd1025.com/about/playlists/now-playing'
         print 'Grabbing page source from "%s"' % source
@@ -56,19 +63,30 @@ class GrooveSpottie(object):
             print 'Attempting to create entry for %s' % query
             next_entry = {}
             next_entry['track_query'] = query
-            try:
-                tinysong_url = self.get_tinysong_url(query)
-                if tinysong_url:
-                    next_entry['tinysong_url'] = tinysong_url
-                    tracks_info.append(next_entry)
-                else:
+            if self.past_run_data['past_queries'].get(query):
+                next_entry['tinysong_url'] = self.past_run_data['past_queries'][query]['tinysong_url']
+            else:
+                try:
+                    tinysong_url = self.get_tinysong_url(query)
+                    try:
+                        if 'rate limit exceeded' in tinysong_url.values()[0]:
+                            track_queries.pop(i)
+                    except AttributeError:
+                        if tinysong_url:
+                            next_entry['tinysong_url'] = tinysong_url
+                            tracks_info.append(next_entry)
+                            self.past_run_data['past_queries'][query] = {'tinysong_url': tinysong_url.encode('utf-8')}
+                except ValueError:
                     track_queries.pop(i)
-            except ValueError:
-                track_queries.pop(i)
+        with open(path.join(self.past_run_data_path, 'past_run_data.yaml'), 'w') as outfile:
+            outfile.write(yaml.dump(self.past_run_data, default_flow_style=True))
         return tracks_info
             
     def main(self):
         tracks = self.get_tracks_info()
+        if not tracks:
+            print 'No track information found, probably due to exceeding tinysong API rate limit'
+            return
         print 'Track information gathered, launching browser...'
         w = webdriver.Firefox()
         for track in reversed(tracks):
@@ -115,7 +133,7 @@ class GrooveSpottie(object):
             track['track_length'] = track_length_raw[0]*60 + track_length_raw[1]
             print 'next song starts in approx: %ss' % track['track_length']
             #Sleep (minus 1 to account for delay, above)
-            time.sleep(track['track_length']-1))
+            time.sleep(track['track_length']-1)
         w.close()
 
 if __name__ == '__main__':
