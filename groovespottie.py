@@ -15,6 +15,10 @@ class GrooveSpottie(object):
         self.past_run_data_path = path.dirname(path.abspath(__file__))
         self.past_run_data = yaml.load(open(path.join(self.past_run_data_path, 'past_run_data.yaml')))
 
+    def save_past_run_data(self):
+        with open(path.join(self.past_run_data_path, 'past_run_data.yaml'), 'w') as outfile:
+            outfile.write(yaml.dump(self.past_run_data, default_flow_style=True))
+
     def get_song_length(self, track_str):
         #Expects song_name to be in form of
         # 'artist+name+song+name'
@@ -78,8 +82,7 @@ class GrooveSpottie(object):
                             self.past_run_data['past_queries'][query] = {'tinysong_url': tinysong_url.encode('utf-8')}
                 except ValueError:
                     track_queries.pop(i)
-        with open(path.join(self.past_run_data_path, 'past_run_data.yaml'), 'w') as outfile:
-            outfile.write(yaml.dump(self.past_run_data, default_flow_style=True))
+        self.save_past_run_data()
         return tracks_info
             
     def main(self):
@@ -92,6 +95,7 @@ class GrooveSpottie(object):
         for track in reversed(tracks):
             print 'Starting up "%s"' % track['track_query']
             w.get(track['tinysong_url'])
+            time.sleep(1)
             try:
                 w.switch_to_alert().accept()
             except WebDriverException:
@@ -132,6 +136,11 @@ class GrooveSpottie(object):
 
             track['track_length'] = track_length_raw[0]*60 + track_length_raw[1]
             print 'next song starts in approx: %ss' % track['track_length']
+
+            #Update last_song_played
+            self.past_run_data['last_song_played'] = track['track_query']
+            self.save_past_run_data()
+
             #Sleep (minus 1 to account for delay, above)
             time.sleep(track['track_length']-1)
         w.close()
