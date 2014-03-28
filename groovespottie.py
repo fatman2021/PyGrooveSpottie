@@ -30,7 +30,8 @@ class GrooveSpottie(object):
         i = 1
         clean = lambda x: x.replace('&','').replace('.','').replace(
                             "'",'').replace('(','').replace(')','').replace(
-                            '?','').replace('!','').replace(' ','+')
+                            '?','').replace('!','').replace(',','').replace(
+                            ' ','+')
         while i < len(tds):
             if i%2 == 1:
                 try:
@@ -55,16 +56,16 @@ class GrooveSpottie(object):
             print 'Attempting to create entry for %s' % query
             next_entry = {}
             next_entry['track_query'] = query
-            try:
-                next_entry['track_length'] = self.get_song_length(query)
-                tinysong_url = self.get_tinysong_url(query)
-                if tinysong_url:
-                    next_entry['tinysong_url'] = tinysong_url
-                    tracks_info.append(next_entry)
-                else:
-                    track_queries.pop(i)
-            except AttributeError:
+            #try:
+                #next_entry['track_length'] = self.get_song_length(query)
+            tinysong_url = self.get_tinysong_url(query)
+            if tinysong_url:
+                next_entry['tinysong_url'] = tinysong_url
+                tracks_info.append(next_entry)
+            else:
                 track_queries.pop(i)
+            #except AttributeError:
+                #track_queries.pop(i)
         return tracks_info
             
     def main(self):
@@ -78,6 +79,9 @@ class GrooveSpottie(object):
                 w.switch_to_alert().accept()
             except WebDriverException:
                 pass
+            time.sleep(2)
+            track_length_raw = [float(x) for x in w.find_element_by_id('time-total').text.split(':')]
+            track['track_length'] = track_length_raw[0]*60 + track_length_raw[1] - 2
             print 'next song starts in approx: %ss' % track['track_length']
             time.sleep(track['track_length'])
         w.close()
