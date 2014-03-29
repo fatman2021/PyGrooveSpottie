@@ -5,7 +5,7 @@ virtual-env:
 	virtualenv --python=$(PYTHON) $(ENV)
 
 env: virtual-env
-	$(ENV)/bin/pip install -i http://eggcarton/ -r requirements/base.txt
+	$(ENV)/bin/pip install -r requirements/base.txt
 
 groovespottie: env
 	$(ENV)/bin/python groovespottie.py
