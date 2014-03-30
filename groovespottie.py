@@ -49,12 +49,18 @@ class GrooveSpottie(object):
                     next_entry = clean(tds[i].find('a').text)
                 except AttributeError:
                     next_entry = clean(tds[i].text)
+                except UnicodeDecodeError:
+                    pass
                 finally:
                     i += 1
             else:
-                next_entry += '+' + clean(tds[i].text)
-                track_queries.append(next_entry)
-                i += 3
+                try:
+                    next_entry += '+' + clean(tds[i].text)
+                    track_queries.append(next_entry)
+                except UnicodeDecodeError:
+                    pass
+                finally:
+                    i += 3
         return track_queries#[-3:-1] #<-- for testing purposes
 
     def get_tracks_info(self, future_selector_param=None):
@@ -63,25 +69,36 @@ class GrooveSpottie(object):
         page_pq = pq(source)
         track_queries = self.get_track_queries(page_pq)
         tracks_info = []
+        rate_limited = False
         for i, query in enumerate(track_queries):
             print 'Attempting to create entry for %s' % query
             next_entry = {}
             next_entry['track_query'] = query
             if self.past_run_data['past_queries'].get(query):
+                print 'Past entry found for this query'
                 next_entry['tinysong_url'] = self.past_run_data['past_queries'][query]['tinysong_url']
-            else:
+                tracks_info.append(next_entry)
+            elif not rate_limited:
                 try:
                     tinysong_url = self.get_tinysong_url(query)
                     try:
                         if 'rate limit exceeded' in tinysong_url.values()[0]:
+                            print 'Tinysong API rate limit reached'
+                            rate_limited = True
                             track_queries.pop(i)
                     except AttributeError:
                         if tinysong_url:
+                            print 'Tinysong url found: %s' % tinysong_url
                             next_entry['tinysong_url'] = tinysong_url
                             tracks_info.append(next_entry)
                             self.past_run_data['past_queries'][query] = {'tinysong_url': tinysong_url.encode('utf-8')}
                 except ValueError:
                     track_queries.pop(i)
+                    print 'Tinysong API may be down'
+            else:
+                #Rate limit reached, pop query
+                print 'No tinysong API query attempted due to rate limit reached'
+                track_queries.pop(i)
         self.save_past_run_data()
         return tracks_info
             
@@ -102,17 +119,34 @@ class GrooveSpottie(object):
                 pass
 
             delay = 0
-            play_pause = None
-            #Wait up to 30 seconds for the page to load
-            while not play_pause and delay < 30:
+            queue_song = None
+            while not queue_song and delay < 2:
                 try:
-                    play_pause = w.find_element_by_id('play-pause')
+                    queue_song = w.find_element_by_class_name('queue-song')
+                    delay = 0
                 except NoSuchElementException:
-                    delay += 3
-                    time.sleep(3)
+                    delay += 1
+                    time.sleep(1)
 
             #Check there was no timeout
-            if delay >= 30:
+            if delay >= 2:
+                print 'The song was not added to queue on load, attempting to play now'
+                for btn in w.find_elements_by_class_name('btn-primary'):
+                    if btn.text == u'Play Song':
+                        btn.click()
+
+            play_pause = None
+            #Wait up to 30 seconds for the page to load
+            while not play_pause and delay < 10:
+                try:
+                    play_pause = w.find_element_by_id('play-pause')
+                    delay = 0
+                except NoSuchElementException:
+                    delay += 1
+                    time.sleep(1)
+
+            #Check there was no timeout
+            if delay >= 10:
                 print 'There seems to be an issue with Grooveshark loading'
                 break
 
@@ -120,11 +154,11 @@ class GrooveSpottie(object):
                 #Page did not start playing immediately
                 play_pause.click()
 
-            delay = 0
             track_length_raw = None
             while not track_length_raw and delay < 10:
                 try:
                     track_length_raw = [float(x) for x in w.find_element_by_id('time-total').text.split(':')]
+                    delay = 0
                 except ValueError:
                     delay +=1
                     time.sleep(1)
