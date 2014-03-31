@@ -5,7 +5,6 @@ import yaml
 from os import path
 from pyquery import PyQuery as pq
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException, NoSuchElementException
 from xml.etree import ElementTree
 
 from creds import TINYSONG_KEY
@@ -103,6 +102,7 @@ class GrooveSpottie(object):
         return tracks_info
             
     def main(self):
+        from selenium.common.exceptions import WebDriverException, NoSuchElementException
         tracks = self.get_tracks_info()
         if not tracks:
             print 'No track information found, probably due to exceeding tinysong API rate limit'
@@ -120,16 +120,16 @@ class GrooveSpottie(object):
 
             delay = 0
             queue_song = None
-            while not queue_song and delay < 2:
+            while not queue_song and delay < 3:
                 try:
                     queue_song = w.find_element_by_class_name('queue-song')
                     delay = 0
-                except NoSuchElementException:
+                except (NoSuchElementException, WebDriverException):
                     delay += 1
                     time.sleep(1)
 
             #Check there was no timeout
-            if delay >= 2:
+            if delay >= 3:
                 print 'The song was not added to queue on load, attempting to play now'
                 for btn in w.find_elements_by_class_name('btn-primary'):
                     if btn.text == u'Play Song':

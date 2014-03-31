@@ -1,58 +1,84 @@
-{last_song_played: BIFFY+CLYRO+MANY+OF+HORROR+BIG+ROOM, past_queries: {ARCADE+FIRE+AFTERLIFE: {
-      tinysong_url: 'http://tinysong.com/1haZW'}, ARCADE+FIRE+WE+USED+TO+WAIT: {tinysong_url: 'http://tinysong.com/1aGx6'},
-    ARCTIC+MONKEYS+FLUORESCENT+ADOLESCENT: {tinysong_url: 'http://tinysong.com/DL92'},
+{last_song_played: MUSE+MADNESS, past_queries: {ARCADE+FIRE+AFTERLIFE: {tinysong_url: 'http://tinysong.com/1haZW'},
+    ARCADE+FIRE+WE+USED+TO+WAIT: {tinysong_url: 'http://tinysong.com/1aGx6'}, ARCTIC+MONKEYS+ARABELLA: {
+      tinysong_url: 'http://tinysong.com/1f7L2'}, ARCTIC+MONKEYS+FLUORESCENT+ADOLESCENT: {
+      tinysong_url: 'http://tinysong.com/DL92'}, BAD+RELIGION+NEW+AMERICA: {tinysong_url: 'http://tinysong.com/gUxi'},
     BAND+OF+SKULLS+ASLEEP+AT+THE+WHEEL: {tinysong_url: 'http://tinysong.com/1gZz8'},
     BASTILLE+BAD+BLOOD: {tinysong_url: 'http://tinysong.com/1gQrR'}, BEAR+HANDS+GIANTS: {
       tinysong_url: 'http://tinysong.com/1gRj5'}, BECK+BLUE+MOON: {tinysong_url: 'http://tinysong.com/1ghaL'},
+    BECK+GIRL: {tinysong_url: 'http://tinysong.com/vAwr'}, BERLIN+METRO+THE: {tinysong_url: 'http://tinysong.com/dgoY'},
     BIFFY+CLYRO+MANY+OF+HORROR+BIG+ROOM: {tinysong_url: 'http://tinysong.com/SXJG'},
     BIG+DATA+DANGEROUS: {tinysong_url: 'http://tinysong.com/1eagc'}, BLACK+ANGELS+ENTRANCE+SONG: {
       tinysong_url: 'http://tinysong.com/HMSL'}, BLACK+REBEL+MOTORCYCLE+CLUB+BERLIN: {
       tinysong_url: 'http://tinysong.com/lGyV'}, BLONDIE+ACCIDENTS+NEVER+HAPPEN: {
-      tinysong_url: 'http://tinysong.com/iiyA'}, BUSH+MACHINEHEAD: {tinysong_url: 'http://tinysong.com/Ca4h'},
+      tinysong_url: 'http://tinysong.com/iiyA'}, BROKEN+BELLS+HOLDING+ON+FOR+LIFE: {
+      tinysong_url: 'http://tinysong.com/1h6tP'}, BUSH+MACHINEHEAD: {tinysong_url: 'http://tinysong.com/Ca4h'},
     CAGE+THE+ELEPHANT+COME+A+LITTLE+CLOSER: {tinysong_url: 'http://tinysong.com/1dME0'},
     CAGE+THE+ELEPHANT+TAKE+IT+OR+LEAVE+IT: {tinysong_url: 'http://tinysong.com/1eGLc'},
-    CAPITAL+CITIES+SAFE+AND+SOUND: {tinysong_url: 'http://tinysong.com/1eIMi'}, COMPANY+OF+THIEVES+TALLULAH: {
-      tinysong_url: 'http://tinysong.com/12gVl'}, CORNERSHOP+BRIMFUL+OF+ASHA: {tinysong_url: 'http://tinysong.com/XbDg'},
-    CULT+LOVE: {tinysong_url: 'http://tinysong.com/179Vh'}, DJANGO+DJANGO+DEFAULT: {
-      tinysong_url: 'http://tinysong.com/1aDRm'}, DOVES+CAUGHT+BY+THE+RIVER: {tinysong_url: 'http://tinysong.com/ZX8j'},
-    DROWNERS+LUV+HOLD+ME+DOWN: {tinysong_url: 'http://tinysong.com/1gptB'}, FITZ+AND+THE+TANTRUMS+OUT+OF+MY+LEAGUE: {
-      tinysong_url: 'http://tinysong.com/1ay7W'}, FITZ+AND+THE+TANTRUMS+THE+WALKER: {
-      tinysong_url: 'http://tinysong.com/1cIDO'}, FOALS+BAD+HABIT: {tinysong_url: 'http://tinysong.com/1aELB'},
-    FOSTER+THE+PEOPLE+BEST+FRIEND: {tinysong_url: 'http://tinysong.com/1h24s'}, GREEN+DAY+AMERICAN+IDIOT: {
-      tinysong_url: 'http://tinysong.com/zbE3'}, J+RODDY+WALSTON+AND+THE+BUSINESS+TAKE+IT+AS+IT+COMES: {
-      tinysong_url: 'http://tinysong.com/1gfoI'}, JEFF+BUCKLEY+LAST+GOODBYE: {tinysong_url: 'http://tinysong.com/16lQS'},
-    KASABIAN+CLUB+FOOT: {tinysong_url: 'http://tinysong.com/11XN3'}, KINGS+OF+LEON+FOUR+KICKS: {
+    CAPITAL+CITIES+SAFE+AND+SOUND: {tinysong_url: 'http://tinysong.com/1eIMi'}, CAYUCAS+HIGH+SCHOOL+LOVER: {
+      tinysong_url: 'http://tinysong.com/1aUuB'}, COLDPLAY+MAGIC: {tinysong_url: 'http://tinysong.com/1hBxD'},
+    COMPANY+OF+THIEVES+TALLULAH: {tinysong_url: 'http://tinysong.com/12gVl'}, CORNERSHOP+BRIMFUL+OF+ASHA: {
+      tinysong_url: 'http://tinysong.com/XbDg'}, CULT+LOVE: {tinysong_url: 'http://tinysong.com/179Vh'},
+    DJANGO+DJANGO+DEFAULT: {tinysong_url: 'http://tinysong.com/1aDRm'}, DOVES+CAUGHT+BY+THE+RIVER: {
+      tinysong_url: 'http://tinysong.com/ZX8j'}, DROWNERS+LUV+HOLD+ME+DOWN: {tinysong_url: 'http://tinysong.com/1gptB'},
+    FITZ+AND+THE+TANTRUMS+OUT+OF+MY+LEAGUE: {tinysong_url: 'http://tinysong.com/1ay7W'},
+    FITZ+AND+THE+TANTRUMS+THE+WALKER: {tinysong_url: 'http://tinysong.com/1cIDO'},
+    FOALS+BAD+HABIT: {tinysong_url: 'http://tinysong.com/1aELB'}, FOALS+MY+NUMBER: {
+      tinysong_url: 'http://tinysong.com/1aqRR'}, FOSTER+THE+PEOPLE+BEST+FRIEND: {
+      tinysong_url: 'http://tinysong.com/1h24s'}, GARBAGE+NUMBER+ONE+CRUSH: {tinysong_url: 'http://tinysong.com/jIgl'},
+    GREEN+DAY+AMERICAN+IDIOT: {tinysong_url: 'http://tinysong.com/zbE3'}, GROUPLOVE+SHARK+ATTACK: {
+      tinysong_url: 'http://tinysong.com/1hDmn'}, IMAGINE+DRAGONS+RADIOACTIVE: {tinysong_url: 'http://tinysong.com/1fwFA'},
+    J+RODDY+WALSTON+AND+THE+BUSINESS+TAKE+IT+AS+IT+COMES: {tinysong_url: 'http://tinysong.com/1gfoI'},
+    JACK+WHITE+FREEDOM+AT+21: {tinysong_url: 'http://tinysong.com/13V1M'}, JACK+WHITE+SIXTEEN+SALTINES: {
+      tinysong_url: 'http://tinysong.com/14bN0'}, JAKE+BUGG+LIGHTNING+BOLT: {tinysong_url: 'http://tinysong.com/18RD5'},
+    JAMES+LAID: {tinysong_url: 'http://tinysong.com/lFEm'}, JEFF+BUCKLEY+LAST+GOODBYE: {
+      tinysong_url: 'http://tinysong.com/16lQS'}, KASABIAN+CLUB+FOOT: {tinysong_url: 'http://tinysong.com/11XN3'},
+    KASABIAN+LSF+LOST+SOULS+FOREVER: {tinysong_url: 'http://tinysong.com/jkiA'}, KINGS+OF+LEON+FOUR+KICKS: {
       tinysong_url: 'http://tinysong.com/hzJI'}, KINGS+OF+LEON+WAIT+FOR+ME: {tinysong_url: 'http://tinysong.com/1gSBO'},
     KONGOS+COME+WITH+ME+NOW: {tinysong_url: 'http://tinysong.com/NZCl'}, LITTLE+GREEN+CARS+HARPER+LEE: {
-      tinysong_url: 'http://tinysong.com/1cKYw'}, LORDE+TEAM: {tinysong_url: 'http://tinysong.com/1hmwn'},
-    M83+MIDNIGHT+CITY: {tinysong_url: 'http://tinysong.com/KZMo'}, MANCHESTER+ORCHESTRA+TOP+NOTCH: {
-      tinysong_url: 'http://tinysong.com/1hBJ2'}, METRIC+GIMME+SYMPATHY+BIG+ROOM: {
+      tinysong_url: 'http://tinysong.com/1cKYw'}, LORDE+GLORY+AND+GORE: {tinysong_url: 'http://tinysong.com/1gWBA'},
+    LORDE+TEAM: {tinysong_url: 'http://tinysong.com/1hmwn'}, M83+MIDNIGHT+CITY: {
+      tinysong_url: 'http://tinysong.com/KZMo'}, MADNESS+OUR+HOUSE: {tinysong_url: 'http://tinysong.com/jJfp'},
+    MANCHESTER+ORCHESTRA+TOP+NOTCH: {tinysong_url: 'http://tinysong.com/1hBJ2'}, METRIC+GIMME+SYMPATHY+BIG+ROOM: {
       tinysong_url: 'http://tinysong.com/Py6I'}, MOBY+PORCELAIN: {tinysong_url: 'http://tinysong.com/Mt2F'},
-    MORNING+PARADE+ALIENATION: {tinysong_url: 'http://tinysong.com/1gIx5'}, MS+MR+THINK+OF+YOU: {
-      tinysong_url: 'http://tinysong.com/1cyfu'}, MUMFORD++SONS+THE+CAVE: {tinysong_url: 'http://tinysong.com/15jfN'},
+    MODEST+MOUSE+FLOAT+ON: {tinysong_url: 'http://tinysong.com/Zys4'}, MORNING+PARADE+ALIENATION: {
+      tinysong_url: 'http://tinysong.com/1gIx5'}, MS+MR+THINK+OF+YOU: {tinysong_url: 'http://tinysong.com/1cyfu'},
+    MUMFORD++SONS+THE+CAVE: {tinysong_url: 'http://tinysong.com/15jfN'}, MUSE+MADNESS: {
+      tinysong_url: 'http://tinysong.com/19yAJ'}, MUSE+PANIC+STATION: {tinysong_url: 'http://tinysong.com/19yAI'},
     MUSE+SUPERMASSIVE+BLACK+HOLE: {tinysong_url: 'http://tinysong.com/11yIr'}, MUSE+UPRISING: {
-      tinysong_url: 'http://tinysong.com/sjDt'}, NINE+INCH+NAILS+CAME+BACK+HAUNTED: {
-      tinysong_url: 'http://tinysong.com/1cB3W'}, NINE+INCH+NAILS+HEAD+LIKE+A+HOLE: {
+      tinysong_url: 'http://tinysong.com/sjDt'}, NEW+ORDER+REGRET: {tinysong_url: 'http://tinysong.com/nX59'},
+    NINE+INCH+NAILS+CAME+BACK+HAUNTED: {tinysong_url: 'http://tinysong.com/1cB3W'},
+    NINE+INCH+NAILS+DOWN+IN+IT: {tinysong_url: 'http://tinysong.com/lvPE'}, NINE+INCH+NAILS+HEAD+LIKE+A+HOLE: {
       tinysong_url: 'http://tinysong.com/woOw'}, NINE+INCH+NAILS+SURVIVALISM: {tinysong_url: 'http://tinysong.com/BqkA'},
-    PALMA+VIOLETS+BEST+OF+FRIENDS: {tinysong_url: 'http://tinysong.com/1bOfX'}, PHANTOGRAM+FALL+IN+LOVE: {
-      tinysong_url: 'http://tinysong.com/1fvd8'}, PORTUGAL+THE+MAN+MODERN+JESUS: {
-      tinysong_url: 'http://tinysong.com/1cvUp'}, QUEENS+OF+THE+STONE+AGE+LITTLE+SISTER: {
-      tinysong_url: 'http://tinysong.com/jnTJ'}, REM+DRIVER+8: {tinysong_url: 'http://tinysong.com/13j8J'},
-    REM+SUPERMAN: {tinysong_url: 'http://tinysong.com/11LTu'}, REPLACEMENTS+TALENT+SHOW: {
-      tinysong_url: 'http://tinysong.com/1cil9'}, SILVERSUN+PICKUPS+PIT+THE: {tinysong_url: 'http://tinysong.com/11Tr6'},
+    PALMA+VIOLETS+BEST+OF+FRIENDS: {tinysong_url: 'http://tinysong.com/1bOfX'}, PEARL+JAM+CORDUROY: {
+      tinysong_url: 'http://tinysong.com/ZU8l'}, PEARL+JAM+ELDERLY+WOMAN+BEHIND+THE+COUNTER+IN: {
+      tinysong_url: 'http://tinysong.com/D32b'}, PHANTOGRAM+FALL+IN+LOVE: {tinysong_url: 'http://tinysong.com/1fvd8'},
+    PORTUGAL+THE+MAN+MODERN+JESUS: {tinysong_url: 'http://tinysong.com/1cvUp'}, PSYCHEDELIC+FURS+LOVE+MY+WAY: {
+      tinysong_url: 'http://tinysong.com/12vqc'}, QUEENS+OF+THE+STONE+AGE+LITTLE+SISTER: {
+      tinysong_url: 'http://tinysong.com/jnTJ'}, QUEENS+OF+THE+STONE+AGE+SMOOTH+SAILING: {
+      tinysong_url: 'http://tinysong.com/1eOjm'}, RADIOHEAD+I+MIGHT+BE+WRONG: {tinysong_url: 'http://tinysong.com/LSIt'},
+    RADIOHEAD+OPTIMISTIC: {tinysong_url: 'http://tinysong.com/104vr'}, REM+DRIVER+8: {
+      tinysong_url: 'http://tinysong.com/13j8J'}, REM+SUPERMAN: {tinysong_url: 'http://tinysong.com/11LTu'},
+    REPLACEMENTS+TALENT+SHOW: {tinysong_url: 'http://tinysong.com/1cil9'}, SILVERSUN+PICKUPS+CANNIBAL: {
+      tinysong_url: 'http://tinysong.com/1gjcO'}, SILVERSUN+PICKUPS+PIT+THE: {tinysong_url: 'http://tinysong.com/11Tr6'},
     SIMPLE+MINDS+ALIVE+AND+KICKING: {tinysong_url: 'http://tinysong.com/10UeT'}, SLEEPER+AGENT+WAVES: {
-      tinysong_url: 'http://tinysong.com/1grFe'}, STONE+ROSES+I+WANNA+BE+ADORED: {
+      tinysong_url: 'http://tinysong.com/1grFe'}, SMASHING+PUMPKINS+LANDSLIDE: {tinysong_url: 'http://tinysong.com/19PRC'},
+    SOUNDGARDEN+SPOONMAN: {tinysong_url: 'http://tinysong.com/rUfD'}, STONE+ROSES+I+WANNA+BE+ADORED: {
       tinysong_url: 'http://tinysong.com/HLe5'}, TALKING+HEADS+NOTHING+BUT+FLOWERS: {
-      tinysong_url: 'http://tinysong.com/LK59'}, THE+BLACK+KEYS+FEVER: {tinysong_url: 'http://tinysong.com/1bUTi'},
-    THE+BLACK+KEYS+I+GOT+MINE: {tinysong_url: 'http://tinysong.com/PFue'}, THE+CRANBERRIES+RIDICULOUS+THOUGHTS: {
-      tinysong_url: 'http://tinysong.com/R5A5'}, THE+FEATURES+THIS+DISORDER: {tinysong_url: 'http://tinysong.com/1bGDh'},
-    THE+FOO+FIGHTERS+MONKEY+WRENCH: {tinysong_url: 'http://tinysong.com/ZcdU'}, THE+HEAD+AND+THE+HEART+SHAKE: {
-      tinysong_url: 'http://tinysong.com/1ejPf'}, THE+KILLERS+ON+TOP: {tinysong_url: 'http://tinysong.com/HP5E'},
-    THE+KILLS+FUTURE+STARTS+SLOW: {tinysong_url: 'http://tinysong.com/1b44h'}, THE+POSTAL+SERVICE+A+TATTERED+LINE+OF+STRING: {
-      tinysong_url: 'http://tinysong.com/1aLoA'}, THE+SMITHS+HEADMASTER+RITUAL+THE: {
-      tinysong_url: 'http://tinysong.com/iD9z'}, THE+TEMPER+TRAP+SWEET+DISPOSITION: {
-      tinysong_url: 'http://tinysong.com/L1jL'}, TOKYO+POLICE+CLUB+HOT+TONIGHT: {
-      tinysong_url: 'http://tinysong.com/1gQTt'}, WEEZER+BEVERLY+HILLS: {tinysong_url: 'http://tinysong.com/Qomh'},
-    WEEZER+GOOD+LIFE+THE: {tinysong_url: 'http://tinysong.com/LHB3'}, WILD+CUB+THUNDER+CLATTER: {
+      tinysong_url: 'http://tinysong.com/LK59'}, TALKING+HEADS+STAY+UP+LATE: {tinysong_url: 'http://tinysong.com/jbnm'},
+    THE+BLACK+KEYS+FEVER: {tinysong_url: 'http://tinysong.com/1bUTi'}, THE+BLACK+KEYS+HOWLIN+FOR+YOU: {
+      tinysong_url: 'http://tinysong.com/Epnd'}, THE+BLACK+KEYS+I+GOT+MINE: {tinysong_url: 'http://tinysong.com/PFue'},
+    THE+CRANBERRIES+RIDICULOUS+THOUGHTS: {tinysong_url: 'http://tinysong.com/R5A5'},
+    THE+FEATURES+THIS+DISORDER: {tinysong_url: 'http://tinysong.com/1bGDh'}, THE+FOO+FIGHTERS+MONKEY+WRENCH: {
+      tinysong_url: 'http://tinysong.com/ZcdU'}, THE+HEAD+AND+THE+HEART+SHAKE: {tinysong_url: 'http://tinysong.com/1ejPf'},
+    THE+KILLERS+ON+TOP: {tinysong_url: 'http://tinysong.com/HP5E'}, THE+KILLS+FUTURE+STARTS+SLOW: {
+      tinysong_url: 'http://tinysong.com/1b44h'}, THE+NATIONAL+BLOODBUZZ+OHIO: {tinysong_url: 'http://tinysong.com/15qOS'},
+    THE+NEIGHBOURHOOD+SWEATER+WEATHER: {tinysong_url: 'http://tinysong.com/1a2rl'},
+    THE+POSTAL+SERVICE+A+TATTERED+LINE+OF+STRING: {tinysong_url: 'http://tinysong.com/1aLoA'},
+    THE+SMITHS+HEADMASTER+RITUAL+THE: {tinysong_url: 'http://tinysong.com/iD9z'},
+    THE+STROKES+REPTILIA: {tinysong_url: 'http://tinysong.com/GfP4'}, THE+TEMPER+TRAP+SWEET+DISPOSITION: {
+      tinysong_url: 'http://tinysong.com/L1jL'}, THE+XX+CHAINED: {tinysong_url: 'http://tinysong.com/1dYAi'},
+    TOKYO+POLICE+CLUB+HOT+TONIGHT: {tinysong_url: 'http://tinysong.com/1gQTt'}, WEEZER+BEVERLY+HILLS: {
+      tinysong_url: 'http://tinysong.com/Qomh'}, WEEZER+GOOD+LIFE+THE: {tinysong_url: 'http://tinysong.com/LHB3'},
+    WEEZER+HASH+PIPE: {tinysong_url: 'http://tinysong.com/e2Wr'}, WILD+CUB+THUNDER+CLATTER: {
       tinysong_url: 'http://tinysong.com/1cQBN'}, YOUNG+THE+GIANT+ITS+ABOUT+TIME: {
       tinysong_url: 'http://tinysong.com/1fCqo'}}}
