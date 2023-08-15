@@ -1,5 +1,5 @@
 pyquery==1.2.4
 requests>=0.12.0
 selenium
-PyYAML==3.10
+PyYAML==5.4
 lxml==4.9.1
